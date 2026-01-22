@@ -1,0 +1,20 @@
+[project]
+name = "mlirdialectgen"
+version = "0.1.0"
+description = "A tool to scaffold boilerplate code for standalone MLIR dialects"
+readme = "README.md"
+authors = [
+    { name = "AjithPadman", email = "ajith.padman@gmail.com" }
+]
+requires-python = ">=3.11.14"
+dependencies = [
+    "click>=8.3.1",
+    "jinja2>=3.1.6",
+]
+
+[project.scripts]
+mlirdialectgen = "mlirdialectgen.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.9.21,<0.10.0"]
+build-backend = "uv_build"

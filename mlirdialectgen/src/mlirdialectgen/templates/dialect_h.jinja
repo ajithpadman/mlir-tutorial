@@ -1,0 +1,19 @@
+//===- {{ DialectName }}Dialect.h - {{ DialectName }} dialect -----------------*- C++ -*-===//
+//
+// This file is licensed under the Apache License v2.0 with LLVM Exceptions.
+// See https://llvm.org/LICENSE.txt for license information.
+// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+//
+//===----------------------------------------------------------------------===//
+
+#ifndef {{ DIALECT_NAME }}_{{ DIALECT_NAME }}DIALECT_H
+#define {{ DIALECT_NAME }}_{{ DIALECT_NAME }}DIALECT_H
+
+#include "mlir/IR/Dialect.h"
+#include "mlir/IR/BuiltinTypes.h"
+
+// Include the auto-generated dialect header (no macro needed)
+#include "{{ DialectName }}/{{ DialectName }}OpsDialect.h.inc"
+
+#endif // {{ DIALECT_NAME }}_{{ DIALECT_NAME }}DIALECT_H
+

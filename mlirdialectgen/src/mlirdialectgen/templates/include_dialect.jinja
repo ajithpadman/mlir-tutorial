@@ -1,0 +1,7 @@
+# Generate dialect code from TableGen
+add_mlir_dialect({{ DialectName }}Ops {{ dialect_name }})
+
+# Generate documentation (optional)
+add_mlir_doc({{ DialectName }}Dialect {{ DialectName }}Dialect {{ DialectName }}/ -gen-dialect-doc)
+add_mlir_doc({{ DialectName }}Ops {{ DialectName }}Ops {{ DialectName }}/ -gen-op-doc)
+

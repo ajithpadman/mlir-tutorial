@@ -1,0 +1,39 @@
+//===- {{ DialectName }}Dialect.td - {{ DialectName }} dialect -----------*- tablegen -*-===//
+//
+// This file is licensed under the Apache License v2.0 with LLVM Exceptions.
+// See https://llvm.org/LICENSE.txt for license information.
+// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+//
+//===----------------------------------------------------------------------===//
+
+#ifndef {{ DIALECT_NAME }}_DIALECT
+#define {{ DIALECT_NAME }}_DIALECT
+
+include "mlir/IR/OpBase.td"
+
+//===----------------------------------------------------------------------===//
+// {{ DialectName }} dialect definition.
+//===----------------------------------------------------------------------===//
+
+def {{ DialectName }}_Dialect : Dialect {
+  let name = "{{ dialect_name }}";
+  let summary = "A simple out-of-tree MLIR dialect example.";
+  let description = [{
+    This dialect demonstrates how to create an out-of-tree MLIR dialect
+    with basic operations. It serves as a template for building custom
+    dialects outside the LLVM source tree.
+  }];
+  let cppNamespace = "::mlir::{{ dialect_name }}";
+
+  let useDefaultTypePrinterParser = 1;
+}
+
+//===----------------------------------------------------------------------===//
+// Base {{ DialectName }} operation definition.
+//===----------------------------------------------------------------------===//
+
+class {{ DialectName }}_Op<string mnemonic, list<Trait> traits = []> :
+    Op<{{ DialectName }}_Dialect, mnemonic, traits>;
+
+#endif // {{ DIALECT_NAME }}_DIALECT
+

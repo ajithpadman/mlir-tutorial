@@ -1,0 +1,43 @@
+# {{ DialectName }} MLIR Dialect
+
+This is a standalone MLIR dialect generated using `mlirdialectgen`.
+
+## Building
+
+1. Ensure you have LLVM with MLIR installed and `LLVM_INSTALL_DIR` environment variable set:
+   ```bash
+   export LLVM_INSTALL_DIR=/path/to/llvm-install
+   ```
+
+2. Create a build directory:
+   ```bash
+   mkdir build && cd build
+   ```
+
+3. Configure CMake:
+   ```bash
+   cmake .. -DLLVM_INSTALL_DIR=$LLVM_INSTALL_DIR
+   ```
+
+4. Build:
+   ```bash
+   make -j$(nproc)
+   ```
+
+## Usage
+
+The dialect defines a simple `add` operation that adds two integers:
+
+```mlir
+%0 = arith.constant 5 : i32
+%1 = arith.constant 3 : i32
+%2 = {{ dialect_name }}.add %0, %1 : i32 -> i32
+// %2 is now 8 : i32
+```
+
+## Project Structure
+
+- `include/{{ DialectName }}/`: Dialect and operation definitions (TableGen)
+- `lib/{{ DialectName }}/`: Dialect and operation implementations (C++)
+- `build/`: Build directory (generated)
+
