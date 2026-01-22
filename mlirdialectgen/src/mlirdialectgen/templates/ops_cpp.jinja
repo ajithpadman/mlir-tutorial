@@ -9,6 +9,9 @@
 #include "{{ DialectName }}/{{ DialectName }}Ops.h"
 #include "{{ DialectName }}/{{ DialectName }}Dialect.h"
 
+#include "mlir/IR/Builders.h"
+#include "mlir/IR/OpImplementation.h"
+
 #define GET_OP_CLASSES
 #include "{{ DialectName }}/{{ DialectName }}Ops.cpp.inc"
 
